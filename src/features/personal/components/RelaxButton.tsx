@@ -14,11 +14,19 @@ export const RelaxButton: React.FC<RelaxButtonProps> = ({
   className = "",
 }) => {
   const { store, setRelaxMode } = usePersonalStore();
+  const [mounted, setMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
-  const isRelaxOn = store.relaxMode;
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // During SSR and initial client hydration render, mounted is false.
+  // This guarantees identical button attributes, title, and Leaf icon class between server and initial client render.
+  // After mount, the restored preference from store.relaxMode is applied cleanly.
+  const isRelaxOn = mounted ? store.relaxMode : false;
 
   useEffect(() => {
     if (!isOpen) return;

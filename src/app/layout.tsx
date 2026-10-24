@@ -5,6 +5,7 @@ import { MaterialProvider } from "@/context/MaterialContext";
 import { FeaturesProvider } from "@/features/components/FeaturesProvider";
 import { ThemeProvider } from "@/context/ThemeContext";
 import { Sidebar } from "@/components/Sidebar";
+import { RightCircleNav } from "@/components/ui/RightCircleNav";
 import { QuickActionsMenu } from "@/components/ui/QuickActionsMenu";
 import { CollaborationDialog } from "@/features/components/CollaborationDialog";
 import { MySpaceDialog } from "@/features/personal"; // [PERSONAL]
@@ -58,7 +59,7 @@ export default function RootLayout({
                   <Sidebar />
                 </Suspense>
               <main
-                className="flex-1 flex flex-col h-[calc(100vh-3.5rem)] md:h-screen overflow-y-auto min-w-0"
+                className="flex-1 flex flex-col h-[calc(100vh-3.5rem)] md:h-screen overflow-y-auto min-w-0 pr-[56px] sm:pr-[80px] lg:pr-[104px]"
                 style={{
                   backgroundColor: "var(--bg)",
                   color: "var(--text-primary)",
@@ -74,6 +75,10 @@ export default function RootLayout({
                   {children}
                 </Suspense>
               </main>
+              {/* Right Side Circular Navigation */}
+              <Suspense fallback={null}>
+                <RightCircleNav />
+              </Suspense>
               {/* Global Quick Actions Arc Menu */}
               <QuickActionsMenu />
               {/* Student Collaboration Dialog */}

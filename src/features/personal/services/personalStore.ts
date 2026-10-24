@@ -760,7 +760,12 @@ export function forgetDocumentData(documentId: string): void {
 import { useEffect, useState } from 'react';
 
 export function usePersonalStore() {
-  const [store, setStore] = useState<PersonalStoreData>(() => loadPersonalStore());
+  const [store, setStore] = useState<PersonalStoreData>(() => {
+    if (typeof window === 'undefined') {
+      return DEFAULT_PERSONAL_STORE;
+    }
+    return loadPersonalStore();
+  });
 
   useEffect(() => {
     setStore(loadPersonalStore());

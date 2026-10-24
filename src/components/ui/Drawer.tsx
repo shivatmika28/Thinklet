@@ -42,20 +42,12 @@ export function Drawer({ isOpen, onClose, onOpenSettings }: DrawerProps) {
       items: [
         { name: "Dashboard", href: "/", icon: Home },
         { name: "Study Room", href: "/learn", icon: BookOpen },
-        { name: "Flashcards", href: "/flashcards", icon: Layers },
-        { name: "Practice Quiz", href: "/quiz", icon: FileQuestion },
-        { name: "Practice Papers", href: "/paper", icon: GraduationCap },
-        { name: "Revision Plan", href: "/revision", icon: CheckSquare },
       ]
     },
     {
-      id: "tools",
-      title: "Mastery & Tools",
+      id: "mastery",
+      title: "Mastery & Focus",
       items: [
-        { name: "Answer Checker", href: "/checker", icon: Sparkles },
-        { name: "Concept Maps", href: "/visual", icon: Workflow },
-        { name: "Smart Notes", href: "/notes", icon: FileText },
-        { name: "Study Planner", href: "/planner", icon: Calendar },
         { name: "Focus Timer", href: "/tracker", icon: Timer },
         { name: "Analytics", href: "/progress", icon: TrendingUp },
         { name: "Exam Readiness", href: "/mastery", icon: Target },
@@ -169,7 +161,7 @@ export function Drawer({ isOpen, onClose, onOpenSettings }: DrawerProps) {
         <div className="flex-1 overflow-y-auto space-y-6">
           {navSections.map((section) => (
             <div key={section.id} className="space-y-1">
-              <span className="text-[11px] font-semibold text-muted-foreground uppercase tracking-wider px-3">
+              <span className="text-[10px] font-bold text-[var(--taupe)] uppercase tracking-wider px-3">
                 {section.title}
               </span>
               <div className="space-y-0.5 pt-1">
@@ -187,7 +179,7 @@ export function Drawer({ isOpen, onClose, onOpenSettings }: DrawerProps) {
                       onClick={onClose}
                       className={`flex items-center gap-3 px-3.5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 ${
                         isActive
-                          ? "bg-[#98473E] text-white shadow-[0_4px_12px_rgba(152,71,62,0.35)]"
+                          ? "bg-[var(--sidebar-active-bg)] text-[var(--accent-contrast)] shadow-[var(--shadow)]"
                           : "text-[var(--text-muted)] hover:bg-[var(--surface-hover)] hover:text-[var(--text)] hover:translate-x-1"
                       }`}
                     >

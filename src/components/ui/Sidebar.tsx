@@ -43,20 +43,12 @@ export function Sidebar() {
       items: [
         { name: "Dashboard", href: "/", icon: Home },
         { name: "Study Room", href: "/learn", icon: BookOpen },
-        { name: "Flashcards", href: "/flashcards", icon: Layers },
-        { name: "Practice Quiz", href: "/quiz", icon: FileQuestion },
-        { name: "Practice Papers", href: "/paper", icon: GraduationCap },
-        { name: "Revision Plan", href: "/revision", icon: CheckSquare },
       ]
     },
     {
-      id: "tools",
-      title: "Mastery & Tools",
+      id: "mastery",
+      title: "Mastery & Focus",
       items: [
-        { name: "Answer Checker", href: "/checker", icon: Sparkles },
-        { name: "Concept Maps", href: "/visual", icon: Workflow },
-        { name: "Smart Notes", href: "/notes", icon: FileText },
-        { name: "Study Planner", href: "/planner", icon: Calendar },
         { name: "Focus Timer", href: "/tracker", icon: Timer },
         { name: "Analytics", href: "/progress", icon: TrendingUp },
         { name: "Exam Readiness", href: "/mastery", icon: Target },
@@ -151,10 +143,10 @@ export function Sidebar() {
                 isExpanded ? "opacity-100" : "opacity-0"
               }`}
             >
-              <span className="text-base font-extrabold tracking-tight text-white font-['Quicksand',sans-serif] leading-tight">
+              <span className="text-base font-extrabold tracking-tight text-[var(--sidebar-text)] font-['Quicksand',sans-serif] leading-tight">
                 Thinklet
               </span>
-              <span className="text-[10px] text-[#B49082] font-semibold tracking-wider uppercase">
+              <span className="text-[10px] text-[var(--taupe)] font-semibold tracking-wider uppercase">
                 Smart Tutor
               </span>
             </div>
@@ -165,6 +157,14 @@ export function Sidebar() {
             {navSections.map((sec, sIdx) => (
               <React.Fragment key={sec.id}>
                 {sIdx > 0 && <div className="h-px bg-white/10 my-2 mx-1" />}
+                {/* Section subpart heading */}
+                <div
+                  className={`px-3 pt-2 pb-1 text-[10px] font-bold uppercase tracking-wider text-[var(--taupe)] transition-opacity duration-150 select-none ${
+                    isExpanded ? "opacity-100 block" : "opacity-0 hidden"
+                  }`}
+                >
+                  {sec.title}
+                </div>
                 {sec.items.map((item) => {
                   const isActive =
                     item.href === "/"
@@ -179,8 +179,8 @@ export function Sidebar() {
                       aria-current={isActive ? "page" : undefined}
                       className={`flex items-center gap-3 h-10 px-3 rounded-full text-xs font-semibold transition-all duration-200 ${
                         isActive
-                          ? "bg-[#98473E] text-white shadow-[0_4px_12px_rgba(152,71,62,0.4),inset_0_1px_1px_rgba(255,255,255,0.3)] border border-[#98473E]/40"
-                          : "text-[var(--sidebar-text)]/75 hover:bg-white/15 hover:text-white hover:translate-x-1"
+                          ? "bg-[var(--sidebar-active-bg)] text-[var(--accent-contrast)] shadow-[var(--shadow)] border border-[var(--sidebar-active-bg)]/40"
+                          : "text-[var(--sidebar-text)]/75 hover:bg-white/15 hover:text-[var(--sidebar-text)] hover:translate-x-1"
                       }`}
                     >
                       <Icon className="h-4 w-4 shrink-0" aria-hidden="true" />
@@ -204,7 +204,7 @@ export function Sidebar() {
               type="button"
               onClick={() => setIsSettingsOpen(true)}
               aria-label="Settings"
-              className="flex items-center gap-3 w-full h-10 px-3 rounded-full text-xs font-semibold text-[var(--sidebar-text)]/75 hover:bg-white/10 hover:text-white transition-all cursor-pointer"
+              className="flex items-center gap-3 w-full h-10 px-3 rounded-full text-xs font-semibold text-[var(--sidebar-text)]/75 hover:bg-white/10 hover:text-[var(--sidebar-text)] transition-all cursor-pointer"
             >
               <SlidersHorizontal className="h-4 w-4 shrink-0" aria-hidden="true" />
               <span
