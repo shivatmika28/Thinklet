@@ -1,0 +1,57 @@
+@import "tailwindcss";
+@import "../styles/design-system.css";
+
+:root {
+  --background: #E8D8C6;
+  --foreground: #30251F;
+  --card: #F7EFE5;
+  --card-foreground: #30251F;
+  --popover: #F7EFE5;
+  --popover-foreground: #30251F;
+
+  --primary: #98473E;
+  --primary-foreground: #FFFFFF;
+
+  --secondary: #E1CFC0;
+  --secondary-foreground: #30251F;
+
+  --muted: #E1CFC0;
+  --muted-foreground: #75665D;
+
+  --accent: #98473E;
+  --accent-foreground: #FFFFFF;
+
+  --destructive: #98473E;
+  --destructive-foreground: #FFFFFF;
+
+  --border: #D8C8B8;
+  --input: #D8C8B8;
+  --ring: #98473E;
+  --radius: 1rem;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Card hover with clay elevation */
+.card-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px -4px rgba(48, 37, 31, 0.12), 0 4px 10px -2px rgba(48, 37, 31, 0.05);
+  border-color: #B49082;
+}
+
+/* Dyslexia accessibility mode */
+.dyslexia-mode,
+.dyslexia-mode body {
+  font-family: "OpenDyslexic", "Comic Sans MS", sans-serif !important;
+  letter-spacing: 0.05em !important;
+  line-height: 1.8 !important;
+}

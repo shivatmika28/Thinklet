@@ -1,0 +1,664 @@
+/* ==========================================================================
+   Thinklet Design System — Warm Earthy Educational Visual Identity
+   Palette:
+     • Main Application Background: #E8D8C6 (Warm beige)
+     • Cards & Elevated Surfaces:   #F7EFE5 (Warm cream)
+     • Secondary Surfaces:          #E1CFC0 (Soft beige)
+     • Subtle Highlights:           #D6C3C9 (Dusty rose)
+     • Secondary Accents:           #B49082 (Dusty taupe)
+     • Primary Actions & Buttons:   #98473E (Terracotta)
+     • Focus & Streaks & Accents:   #A37C40 (Muted copper)
+     • Main Headings & Text:        #30251F (Warm charcoal)
+     • Secondary Text:              #75665D (Muted brown)
+     • Borders & Dividers:          #D8C8B8 (Warm beige)
+     • Positive Progress:           #7F9274 (Muted sage)
+   ========================================================================== */
+
+:root {
+  color-scheme: light;
+
+  /* Warm Earthy Color Palette Tokens (Thinklet Visual Identity) */
+  --color-warm-beige: #E8D8C6;
+  --color-warm-cream: #F7EFE5;
+  --color-soft-beige: #E1CFC0;
+  --color-dusty-rose: #D6C3C9;
+  --color-dusty-taupe: #B49082;
+  --color-terracotta: #98473E;
+  --color-muted-copper: #A37C40;
+  --color-warm-charcoal: #30251F;
+  --color-muted-brown: #75665D;
+  --color-border-beige: #D8C8B8;
+  --color-muted-sage: #7F9274;
+
+  /* Harmonious Tints & Surfaces */
+  --color-surface-white: #F7EFE5;
+  --color-surface-ice: #E1CFC0;
+  --color-tint-soft: #E1CFC0;
+  --color-tint-hover: #D6C3C9;
+  --color-border-soft: #D8C8B8;
+  --color-border-active: #98473E;
+  --color-text-muted: #75665D;
+  --color-text-subtle: #75665D;
+
+  /* Standard Application Semantic Aliases (Light Mode) */
+  --background: #E8D8C6;
+  --foreground: #30251F;
+  --card: #F7EFE5;
+  --card-foreground: #30251F;
+  --popover: #F7EFE5;
+  --popover-foreground: #30251F;
+
+  --primary: #98473E;
+  --primary-foreground: #FFFFFF;
+
+  --secondary: #E1CFC0;
+  --secondary-foreground: #30251F;
+
+  --muted: #E1CFC0;
+  --muted-foreground: #75665D;
+
+  --accent: #98473E;
+  --accent-foreground: #FFFFFF;
+
+  --destructive: #98473E;
+  --destructive-foreground: #FFFFFF;
+
+  --border: #D8C8B8;
+  --input: #D8C8B8;
+  --ring: #98473E;
+  --radius: 1rem;
+
+  /* Canonical Theme Variables (Light Theme defaults) */
+  --bg: #E8D8C6;
+  --surface: #F7EFE5;
+  --surface-raised: #E1CFC0;
+  --surface-hover: #D6C3C9;
+  --border-soft: #D8C8B8;
+  --border-active: #98473E;
+  --text: #30251F;
+  --text-muted: #75665D;
+  --text-subtle: #75665D;
+  --accent-contrast: #FFFFFF;
+  --sidebar-bg: #30251F;
+  --sidebar-text: #F7EFE5;
+  --sidebar-active-bg: #98473E;
+  --focus-card-bg: linear-gradient(145deg, #30251F 0%, #241D19 100%);
+  --focus-card-border: rgba(255, 255, 255, 0.15);
+  --shadow: 0 10px 25px -4px rgba(48, 37, 31, 0.08), 0 4px 10px -2px rgba(48, 37, 31, 0.04), inset 0 2px 2px 0 rgba(255, 255, 255, 0.8);
+
+  --chart-bar: #98473E;
+  --chart-grid: #D8C8B8;
+  --chart-track: #E1CFC0;
+  --chart-track-hover: #D6C3C9;
+  --chart-text: #75665D;
+
+  --status-high-bg: #F9EBEA;
+  --status-high-text: #98473E;
+  --status-med-bg: #E1CFC0;
+  --status-med-text: #30251F;
+
+  --mascot-tile-bg: #F7EFE5;
+  --mascot-tile-border: #D8C8B8;
+  --notification-dot: #98473E;
+
+  /* Specific Thematic Colors */
+  --sage: #7F9274;
+  --copper: #A37C40;
+  --terracotta: #98473E;
+  --taupe: #B49082;
+  --rose: #D6C3C9;
+
+  /* Legacy Aliases Mapped to Exact Earthy Palette */
+  --bg-gradient: radial-gradient(circle at 10% 20%, #F7EFE5 0%, #E8D8C6 90%);
+  --panel: #F7EFE5;
+  --raised: #E1CFC0;
+  --border-light: #D8C8B8;
+
+  --heading: #30251F;
+  --secondary-surface: #E1CFC0;
+  --secondary-surface-text: #30251F;
+
+  --button: #98473E;
+  --button-text: #FFFFFF;
+  --button-hover: #823C34;
+
+  --text-primary: #30251F;
+  --text-secondary: #75665D;
+
+  /* Status Colors */
+  --strong: #7F9274;
+  --okay: #A37C40;
+  --weak: #98473E;
+  --not-found: #75665D;
+
+  /* Thematic Accents */
+  --peach: #E1CFC0;
+  --buttercream: #A37C40;
+  --lavender: #30251F;
+  --mint: #7F9274;
+  --bubblegum: #D6C3C9;
+
+  /* Typography & Rounded Geometry */
+  --font-family: 'Quicksand', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --radius-card: 1.25rem;
+  --radius-button: 9999px; /* Pill-shaped by default */
+  --radius-pill: 9999px;
+
+  /* Claymorphism Elevation Shadows (Earthy warmth) */
+  --shadow-clay-card: 0 12px 28px -4px rgba(48, 37, 31, 0.09), 0 4px 10px -2px rgba(48, 37, 31, 0.04), inset 0 2px 2px 0 rgba(255, 255, 255, 0.9), inset 0 -2px 4px 0 rgba(48, 37, 31, 0.04);
+  --shadow-clay-card-hover: 0 18px 38px -6px rgba(48, 37, 31, 0.14), 0 6px 14px -2px rgba(152, 71, 62, 0.12), inset 0 2px 2px 0 rgba(255, 255, 255, 0.95), inset 0 -2px 4px 0 rgba(48, 37, 31, 0.05);
+  --shadow-clay-btn: 0 6px 16px -2px rgba(152, 71, 62, 0.28), inset 0 2px 2px 0 rgba(255, 255, 255, 0.4), inset 0 -2px 3px 0 rgba(60, 20, 15, 0.25);
+  --shadow-clay-btn-accent: 0 6px 18px -2px rgba(163, 124, 64, 0.35), inset 0 2px 2px 0 rgba(255, 255, 255, 0.5), inset 0 -2px 3px 0 rgba(70, 50, 20, 0.25);
+  --shadow-clay-btn-secondary: 0 4px 12px -2px rgba(48, 37, 31, 0.08), inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.95), inset 0 -1.5px 2px 0 rgba(48, 37, 31, 0.06);
+
+  --shadow-card: var(--shadow-clay-card);
+  --shadow-sm: 0 2px 6px 0 rgba(48, 37, 31, 0.06);
+
+  --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-short: 150ms;
+  --duration-normal: 250ms;
+}
+
+/* ==========================================================================
+   Dark Mode Theme Overrides
+   Rich earthy dark identity:
+     • Background: #171311
+     • Cards:      #241D19
+     • Secondary:  #30251F
+     • Highlights: #49363A
+     • Accents:    #B49082 & #98473E
+   ========================================================================== */
+html.dark,
+html[data-theme="dark"],
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* Tailwind semantic tokens */
+  --background: #171311;
+  --foreground: #F7EFE5;
+  --card: #241D19;
+  --card-foreground: #F7EFE5;
+  --popover: #241D19;
+  --popover-foreground: #F7EFE5;
+  --primary: #98473E;
+  --primary-foreground: #FFFFFF;
+  --secondary: #30251F;
+  --secondary-foreground: #F7EFE5;
+  --muted: #30251F;
+  --muted-foreground: #D0BFB2;
+  --accent: #98473E;
+  --accent-foreground: #FFFFFF;
+  --destructive: #C66B60;
+  --destructive-foreground: #171311;
+  --border: #493B33;
+  --input: #493B33;
+  --ring: #B49082;
+
+  /* Canonical Theme Variables (Dark Theme) */
+  --bg: #171311;
+  --surface: #241D19;
+  --surface-raised: #30251F;
+  --surface-hover: #49363A;
+  --border-soft: #493B33;
+  --border-active: #B49082;
+  --text: #F7EFE5;
+  --text-muted: #D0BFB2;
+  --text-subtle: #A89588;
+  --accent-contrast: #FFFFFF;
+  --sidebar-bg: #171311;
+  --sidebar-text: #F7EFE5;
+  --sidebar-active-bg: #98473E;
+  --focus-card-bg: linear-gradient(145deg, #241D19 0%, #171311 100%);
+  --focus-card-border: #493B33;
+  --shadow: 0 12px 28px -4px rgba(0, 0, 0, 0.55), inset 0 1px 1px 0 rgba(255, 255, 255, 0.05);
+  --shadow-clay-card: 0 12px 28px -4px rgba(0, 0, 0, 0.55), inset 0 1px 1px 0 rgba(255, 255, 255, 0.05);
+  --shadow-clay-card-hover: 0 18px 38px -6px rgba(0, 0, 0, 0.65), 0 0 20px -2px rgba(152, 71, 62, 0.25), inset 0 1px 1px 0 rgba(255, 255, 255, 0.08);
+
+  --chart-bar: #98473E;
+  --chart-grid: #30251F;
+  --chart-track: #30251F;
+  --chart-track-hover: #49363A;
+  --chart-text: #D0BFB2;
+
+  --status-high-bg: #3E1D1A;
+  --status-high-text: #C66B60;
+  --status-med-bg: #30251F;
+  --status-med-text: #F7EFE5;
+
+  --mascot-tile-bg: #241D19;
+  --mascot-tile-border: #493B33;
+  --notification-dot: #C66B60;
+
+  --sage: #9BAF8D;
+  --copper: #A37C40;
+  --terracotta: #98473E;
+  --taupe: #B49082;
+  --rose: #49363A;
+
+  --color-warm-beige: #171311;
+  --color-warm-cream: #F7EFE5;
+  --color-soft-beige: #30251F;
+  --color-dusty-rose: #49363A;
+  --color-dusty-taupe: #B49082;
+  --color-terracotta: #98473E;
+  --color-muted-copper: #A37C40;
+  --color-warm-charcoal: #F7EFE5;
+  --color-muted-brown: #D0BFB2;
+  --color-border-beige: #493B33;
+  --color-muted-sage: #9BAF8D;
+
+  --panel: #241D19;
+  --raised: #30251F;
+  --border-light: #493B33;
+  --heading: #F7EFE5;
+  --secondary-surface: #30251F;
+  --secondary-surface-text: #F7EFE5;
+  --text-primary: #F7EFE5;
+  --text-secondary: #D0BFB2;
+
+  --button: #98473E;
+  --button-text: #FFFFFF;
+  --button-hover: #B55248;
+
+  --strong: #9BAF8D;
+  --okay: #C49B59;
+  --weak: #C66B60;
+  --not-found: #75665D;
+}
+
+/* Smooth 150ms theme transition */
+html.theme-transitioning,
+html.theme-transitioning *,
+html.theme-transitioning *::before,
+html.theme-transitioning *::after {
+  transition: background-color 150ms ease-out,
+              border-color 150ms ease-out,
+              color 150ms ease-out,
+              fill 150ms ease-out,
+              stroke 150ms ease-out,
+              box-shadow 150ms ease-out !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.theme-transitioning,
+  html.theme-transitioning * {
+    transition: none !important;
+  }
+}
+
+/* Base Body Styles */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-family);
+  letter-spacing: -0.01em;
+}
+
+/* Claymorphic Utility Classes */
+.clay-card {
+  background: var(--card);
+  border-radius: 1.25rem;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-clay-card);
+  transition: transform 250ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 250ms cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 250ms cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, box-shadow;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .clay-card:hover {
+    box-shadow: var(--shadow-clay-card-hover);
+    transform: translateY(-3px);
+    border-color: var(--border-active);
+  }
+}
+
+.clay-card-dark {
+  background: var(--focus-card-bg);
+  color: var(--text);
+  border-radius: 1.25rem;
+  border: 1px solid var(--border);
+  box-shadow: 0 16px 36px -6px rgba(0, 0, 0, 0.5), inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.1), inset 0 -2px 4px 0 rgba(0, 0, 0, 0.35);
+  transition: transform 250ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 250ms cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, box-shadow;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .clay-card-dark:hover {
+    transform: translateY(-3px);
+    border-color: var(--border-active);
+    box-shadow: 0 20px 42px -6px rgba(0, 0, 0, 0.6),
+                0 0 20px -2px rgba(152, 71, 62, 0.3),
+                inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.15);
+  }
+}
+
+/* ==========================================================================
+   Thinklet Interactive Hover System
+   Subtle, modern, floating lift with gentle earthy highlight and border feedback.
+   ========================================================================== */
+
+/* Cards & Surface Containers Hover Effect */
+.thinklet-card-hover {
+  transition: transform 250ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 250ms cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 250ms cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, box-shadow;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .thinklet-card-hover:hover {
+    transform: translateY(-3px);
+    border-color: var(--border-active) !important;
+    box-shadow: var(--shadow-clay-card-hover) !important;
+  }
+}
+
+/* Navy & Dark Cards Hover Effect */
+.thinklet-card-navy-hover {
+  transition: transform 250ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 250ms cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, box-shadow;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .thinklet-card-navy-hover:hover {
+    transform: translateY(-3px);
+    border-color: var(--border-active) !important;
+    box-shadow: 0 20px 42px -6px rgba(0, 0, 0, 0.55),
+                0 0 22px -2px rgba(152, 71, 62, 0.25),
+                inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.15) !important;
+  }
+}
+
+/* Sub-cards, Stat Capsules & Tiles Hover Effect */
+.thinklet-tile-hover {
+  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 220ms cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 220ms cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 220ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, box-shadow;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .thinklet-tile-hover:hover {
+    transform: translateY(-3px);
+    border-color: var(--border-active) !important;
+    box-shadow: 0 10px 22px -3px rgba(48, 37, 31, 0.12),
+                0 0 16px -2px rgba(180, 144, 130, 0.2),
+                inset 0 1.5px 2px 0 rgba(255, 255, 255, 0.6) !important;
+    background-color: var(--surface-hover) !important;
+  }
+}
+
+/* Clickable Rows & Quest Items Hover Effect */
+.thinklet-row-hover {
+  transition: background-color 200ms ease-out,
+              box-shadow 200ms ease-out,
+              transform 200ms ease-out,
+              border-color 200ms ease-out;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .thinklet-row-hover:hover {
+    background-color: var(--surface-hover) !important;
+    box-shadow: inset 3.5px 0 0 0 var(--border-active), 0 4px 14px rgba(48, 37, 31, 0.08);
+    border-color: var(--border-active);
+  }
+}
+
+/* Clickable File & Material Cards */
+.thinklet-file-card-hover {
+  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 220ms cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 220ms cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 220ms cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .thinklet-file-card-hover:hover {
+    transform: translateY(-3px);
+    border-color: var(--border-active) !important;
+    background-color: var(--surface-hover) !important;
+    box-shadow: 0 12px 26px -4px rgba(48, 37, 31, 0.13),
+                0 0 18px -2px rgba(152, 71, 62, 0.18) !important;
+  }
+}
+
+/* Button & Interactive Trigger Controls Hover Effect */
+.thinklet-btn-hover {
+  transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 200ms cubic-bezier(0.16, 1, 0.3, 1),
+              filter 200ms ease-out;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .thinklet-btn-hover:hover:not(:disabled) {
+    transform: translateY(-2px);
+    filter: brightness(1.05);
+    box-shadow: 0 8px 18px -2px rgba(48, 37, 31, 0.18),
+                0 0 12px -2px rgba(152, 71, 62, 0.2);
+  }
+  .thinklet-btn-hover:active:not(:disabled) {
+    transform: translateY(1px) scale(0.98);
+  }
+}
+
+.clay-pill-btn {
+  border-radius: 9999px;
+  font-weight: 600;
+  box-shadow: var(--shadow-clay-btn);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.clay-pill-btn:hover {
+  transform: translateY(-1.5px);
+  filter: brightness(1.05);
+}
+
+.clay-pill-btn:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 2px 6px 0 rgba(48, 37, 31, 0.2), inset 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* Accessible Focus Ring */
+.focus-ring:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* Cute & Smooth Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--taupe, #B49082);
+  border-radius: 9999px;
+  border: 2px solid var(--bg);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary, #98473E);
+}
+
+/* Delightful Micro-Animations */
+@keyframes cuteBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes mascotWiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-3deg); }
+  75% { transform: rotate(3deg); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(18, 130, 162, 0.3); }
+  50% { box-shadow: 0 0 0 8px rgba(18, 130, 162, 0); }
+}
+
+.animate-cute-bounce {
+  animation: cuteBounce 2.5s ease-in-out infinite;
+}
+
+.animate-mascot-wiggle:hover {
+  animation: mascotWiggle 0.6s ease-in-out;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2s infinite;
+}
+
+@keyframes pipBreathing {
+  0%, 100% { transform: translateY(0) scaleY(1); }
+  50% { transform: translateY(-2.5px) scaleY(1.02); }
+}
+
+@keyframes pipBounceJoy {
+  0% { transform: translateY(0) scale(1); }
+  30% { transform: translateY(-8px) scale(1.08) rotate(-4deg); }
+  60% { transform: translateY(2px) scale(0.96) rotate(3deg); }
+  80% { transform: translateY(-3px) scale(1.02) rotate(-1deg); }
+  100% { transform: translateY(0) scale(1) rotate(0deg); }
+}
+
+@keyframes speechBubbleEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes zzzFloat {
+  0% { opacity: 0; transform: translate(0, 0) scale(0.6); }
+  50% { opacity: 0.9; transform: translate(4px, -6px) scale(1); }
+  100% { opacity: 0; transform: translate(8px, -12px) scale(1.15); }
+}
+
+.animate-pip-breathing {
+  animation: pipBreathing 3.6s ease-in-out infinite;
+}
+
+.animate-pip-bounce {
+  animation: pipBounceJoy 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.animate-speech-bubble {
+  animation: speechBubbleEntrance 220ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-zzz-float {
+  animation: zzzFloat 2.6s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 200ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes dashboardCardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-card-entrance {
+  animation: dashboardCardEntrance 280ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes flamePulse {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0 rgba(245, 158, 11, 0));
+  }
+  50% {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.45));
+  }
+}
+
+.animate-flame-pulse {
+  animation: flamePulse 2s ease-in-out infinite;
+}
+
+@keyframes sprintBorderPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(18, 130, 162, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 0 4px rgba(18, 130, 162, 0.15);
+  }
+}
+
+.animate-sprint-running {
+  animation: sprintBorderPulse 2s ease-in-out infinite;
+}
+
+@keyframes checkmarkPop {
+  0% {
+    transform: scale(0.7);
+  }
+  55% {
+    transform: scale(1.18);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-check-pop {
+  animation: checkmarkPop 200ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Skeleton animation */
+@keyframes skeletonPulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.9; }
+}
+
+.animate-skeleton-pulse {
+  animation: skeletonPulse 1.8s ease-in-out infinite;
+}
+
+/* Reduced Motion: OS preference or user setting */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+html.reduce-motion,
+html.reduce-motion *,
+html.reduce-motion *::before,
+html.reduce-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+}

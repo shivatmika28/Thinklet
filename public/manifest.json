@@ -1,0 +1,16 @@
+{
+  "name": "Thinklet — Smart Educational Companion",
+  "short_name": "Thinklet",
+  "description": "Smart, cute and modern AI educational companion with source-grounded learning, diagnostic quizzes, 3D flashcards, and personalized revision plans.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#EFFCFB",
+  "theme_color": "#001F54",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ]
+}
